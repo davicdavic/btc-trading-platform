@@ -520,39 +520,6 @@ export default function ProfilePage() {
           color: #8fa2ba;
           line-height: 1.7;
         }
-        .doc-grid {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 18px;
-        }
-        .doc-card {
-          padding: 16px;
-          border-radius: 20px;
-          background: rgba(255,255,255,.03);
-          border: 1px solid rgba(255,255,255,.07);
-        }
-        .doc-card strong {
-          display: block;
-          margin-bottom: 10px;
-        }
-        .doc-preview {
-          width: 100%;
-          aspect-ratio: 4 / 3;
-          border-radius: 16px;
-          overflow: hidden;
-          background: rgba(255,255,255,.04);
-          border: 1px solid rgba(255,255,255,.08);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #8fa2ba;
-          font-size: 13px;
-        }
-        .doc-preview img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
         .certificate-sheet {
           margin-top: 18px;
           background: #fff;
@@ -628,7 +595,6 @@ export default function ProfilePage() {
           .desk-strip,
           .form-grid { grid-template-columns: 1fr; }
           .account-grid { grid-template-columns: 1fr; }
-          .doc-grid { grid-template-columns: 1fr; }
           .certificate-sheet { padding: 20px; }
           .certificate-brand { align-items: flex-start; }
         }
@@ -804,37 +770,13 @@ export default function ProfilePage() {
                   <Award size={22} />
                   Verified Successfully
                 </div>
-                <div className="kyc-copy">Your account is verified and trading access is active. BTCTradePro has approved the profile information you submitted.</div>
-                <div className="certificate-sheet">
-                  <div className="certificate-brand">
-                    <div className="certificate-badge">₿</div>
-                    <div>
-                      <div className="certificate-title">BTCTradePro Compliance Network</div>
-                      <div className="certificate-title">Verification Department</div>
-                      <div className="certificate-subtitle">Account Verification Status Information</div>
-                    </div>
-                  </div>
-                  <div className="certificate-center">Identity Verification Confirmation</div>
-                  <div className="certificate-meta">
-                    <div><strong>Date:</strong> {new Date().toLocaleDateString()}</div>
-                    <div><strong>Account Holder:</strong> {currentKyc?.fullName || user?.name || 'Trader'}</div>
-                    <div><strong>Account Email:</strong> {user?.email || 'No email added'}</div>
-                    <div><strong>Phone:</strong> {currentKyc?.phone || user?.phone || 'Not set'}</div>
-                    <div><strong>Country:</strong> {currentKyc?.country || user?.country || 'Not set'}</div>
-                    <div><strong>City:</strong> {currentKyc?.city || user?.city || 'Not set'}</div>
-                    <div><strong>Post Code:</strong> {currentKyc?.postCode || user?.postCode || 'Not set'}</div>
-                    <div><strong>Job:</strong> {currentKyc?.job || user?.job || 'Not set'}</div>
-                    <div><strong>Document Type:</strong> {currentDocumentType}</div>
-                    <div><strong>Verification Status:</strong> Approved</div>
-                  </div>
-                  <div className="certificate-notice">
-                    This letter confirms that the submitted account information and identity documents have been reviewed by BTCTradePro and marked as verified for platform trading access.
-                  </div>
-                  <div className="certificate-sign">
-                    Sincerely, <strong>BTCTradePro Verification Department</strong>
-                  </div>
+                <div className="kyc-copy">Your account is verified and trading access is active. BTCTradePro approved your verification successfully.</div>
+                <div className="info-list" style={{ marginTop: '18px' }}>
+                  <div className="info-item"><div><strong>Status</strong><small>Approved by admin review</small></div><div className="status-pill on">Verified</div></div>
+                  <div className="info-item"><div><strong>Account Holder</strong><small>{currentKyc?.fullName || user?.name || 'Trader'}</small></div><div>{currentDocumentType}</div></div>
+                  <div className="info-item"><div><strong>Account Email</strong><small>{user?.email || 'No email added'}</small></div><div>{memberSince}</div></div>
                 </div>
-                <div className="submit-note">Submitted document images are stored in the system review, but they are hidden from the verified profile view.</div>
+                <div className="submit-note">Your verification documents stay in the admin review system and are not shown on your profile page.</div>
               </div>
             ) : verificationStatus === 'pending' ? (
               <div className="waiting-card">
@@ -848,21 +790,7 @@ export default function ProfilePage() {
                   <div className="info-item"><div><strong>Phone</strong><small>{currentKyc?.phone || 'Not set'}</small></div><div>{currentDocumentType}</div></div>
                   <div className="info-item"><div><strong>Country</strong><small>{currentKyc?.country || 'Not set'}</small></div><div>{currentDocumentType}</div></div>
                 </div>
-                <div className="doc-grid" style={{ marginTop: '18px' }}>
-                  <div className="doc-card">
-                    <strong>Front Document</strong>
-                    <div className="doc-preview">
-                      {currentKyc?.frontImage ? <img src={currentKyc.frontImage} alt="pending front document" /> : 'No image'}
-                    </div>
-                  </div>
-                  <div className="doc-card">
-                    <strong>Back Document</strong>
-                    <div className="doc-preview">
-                      {currentKyc?.backImage ? <img src={currentKyc.backImage} alt="pending back document" /> : 'No image'}
-                    </div>
-                  </div>
-                </div>
-                {(kycSubmitted || verificationStatus === 'pending') && <div className="submit-note">Verification request sent successfully. Trading stays locked until approval.</div>}
+                {(kycSubmitted || verificationStatus === 'pending') && <div className="submit-note">Verification request sent successfully. Your files were sent to admin review and are hidden from your profile page.</div>}
               </div>
             ) : (
               <>
@@ -889,22 +817,18 @@ export default function ProfilePage() {
                       <option value="drivers_license">Driver License</option>
                     </select>
                   </div>
-                  <div className="doc-card full">
+                  <div className="avatar-section full">
                     <strong>Document Front</strong>
-                    <div className="doc-preview" style={{ marginBottom: '12px' }}>
-                      {kycForm.frontImage ? <img src={kycForm.frontImage} alt="front document preview" /> : 'Upload the front side image'}
-                    </div>
+                    <div className="avatar-help" style={{ marginBottom: '12px' }}>Upload the front side image. After you submit, the file goes to admin review and will not stay visible on your profile page.</div>
                     <label className="upload-btn">
                       <Camera size={16} />
                       Upload Front Image
                       <input className="sr-only" type="file" accept="image/*" onChange={handleKycImageUpload('frontImage')} />
                     </label>
                   </div>
-                  <div className="doc-card full">
+                  <div className="avatar-section full">
                     <strong>Document Back</strong>
-                    <div className="doc-preview" style={{ marginBottom: '12px' }}>
-                      {kycForm.backImage ? <img src={kycForm.backImage} alt="back document preview" /> : 'Upload the back side image'}
-                    </div>
+                    <div className="avatar-help" style={{ marginBottom: '12px' }}>Upload the back side image. The profile will only show your verification status after submission.</div>
                     <label className="upload-btn">
                       <Camera size={16} />
                       Upload Back Image
