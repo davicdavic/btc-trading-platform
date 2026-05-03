@@ -103,6 +103,11 @@ export default function ProfilePage() {
   const verificationStatus = user?.verificationStatus || 'unverified';
   const verificationLabel = useMemo(() => verificationStatusLabel(verificationStatus), [verificationStatus]);
   const accountTier = hasVerifiedProfile ? 'Verified Trader' : verificationLabel;
+  const displayName = formData.name || user?.name || 'Trader';
+  const displayEmail = formData.email || user?.email || 'No email added yet';
+  const avatarInitial = displayName.trim().charAt(0).toUpperCase() || 'T';
+  const currentKyc = user?.kyc;
+  const currentDocumentType = (currentKyc?.documentType || 'passport').replace('_', ' ');
 
   const saveProfile = () => {
     updateUser(formData);
@@ -632,12 +637,12 @@ export default function ProfilePage() {
       <section className="card hero">
         <div className="hero-main">
           <div className="avatar-wrap">
-            {formData.avatar ? <img src={formData.avatar} alt={formData.name} /> : <div className="avatar-fallback">{formData.name.charAt(0).toUpperCase()}</div>}
+            {formData.avatar ? <img src={formData.avatar} alt={displayName} /> : <div className="avatar-fallback">{avatarInitial}</div>}
             <div className="avatar-edit"><Camera size={16} /></div>
           </div>
           <div>
-            <h1>{formData.name || 'Trader'}</h1>
-            <p>{formData.email || 'No email added yet'}</p>
+            <h1>{displayName}</h1>
+            <p>{displayEmail}</p>
             <div className={`hero-badge ${
               verificationStatus === 'approved'
                 ? 'approved'
@@ -710,13 +715,13 @@ export default function ProfilePage() {
             </button>
           </div>
           <div className="account-grid">
-            <div className="account-chip">
+          <div className="account-chip">
               <span>User Name</span>
-              <strong>{formData.name || 'Trader'}</strong>
+              <strong>{displayName}</strong>
             </div>
             <div className="account-chip">
               <span>User Email</span>
-              <strong>{formData.email || 'No email added yet'}</strong>
+              <strong>{displayEmail}</strong>
             </div>
             <div className="account-chip">
               <span>Account Status</span>
@@ -751,10 +756,10 @@ export default function ProfilePage() {
               </div>
               <div className="avatar-preview-row">
                 <div className="avatar-preview-chip">
-                  {formData.avatar ? <img src={formData.avatar} alt={formData.name || 'profile avatar'} /> : <div className="avatar-fallback">{formData.name.charAt(0).toUpperCase()}</div>}
+                  {formData.avatar ? <img src={formData.avatar} alt={displayName} /> : <div className="avatar-fallback">{avatarInitial}</div>}
                 </div>
                 <div className="avatar-preview-copy">
-                  <strong>{formData.name || 'Trader Profile'}</strong>
+                  <strong>{displayName || 'Trader Profile'}</strong>
                   <span>{editMode ? 'Choose an image file, then save your profile changes.' : 'Your current public trading profile image.'}</span>
                 </div>
               </div>
@@ -812,14 +817,14 @@ export default function ProfilePage() {
                   <div className="certificate-center">Identity Verification Confirmation</div>
                   <div className="certificate-meta">
                     <div><strong>Date:</strong> {new Date().toLocaleDateString()}</div>
-                    <div><strong>Account Holder:</strong> {user?.kyc?.fullName || user?.name}</div>
+                    <div><strong>Account Holder:</strong> {currentKyc?.fullName || user?.name || 'Trader'}</div>
                     <div><strong>Account Email:</strong> {user?.email || 'No email added'}</div>
-                    <div><strong>Phone:</strong> {user?.kyc?.phone || user?.phone}</div>
-                    <div><strong>Country:</strong> {user?.kyc?.country || user?.country}</div>
-                    <div><strong>City:</strong> {user?.kyc?.city || user?.city}</div>
-                    <div><strong>Post Code:</strong> {user?.kyc?.postCode || user?.postCode}</div>
-                    <div><strong>Job:</strong> {user?.kyc?.job || user?.job}</div>
-                    <div><strong>Document Type:</strong> {(user?.kyc?.documentType || 'passport').replace('_', ' ')}</div>
+                    <div><strong>Phone:</strong> {currentKyc?.phone || user?.phone || 'Not set'}</div>
+                    <div><strong>Country:</strong> {currentKyc?.country || user?.country || 'Not set'}</div>
+                    <div><strong>City:</strong> {currentKyc?.city || user?.city || 'Not set'}</div>
+                    <div><strong>Post Code:</strong> {currentKyc?.postCode || user?.postCode || 'Not set'}</div>
+                    <div><strong>Job:</strong> {currentKyc?.job || user?.job || 'Not set'}</div>
+                    <div><strong>Document Type:</strong> {currentDocumentType}</div>
                     <div><strong>Verification Status:</strong> Approved</div>
                   </div>
                   <div className="certificate-notice">
@@ -839,21 +844,21 @@ export default function ProfilePage() {
                 </div>
                 <div className="kyc-copy">Your verification request has been sent to System Admin. Please wait while your identity information and document images are reviewed.</div>
                 <div className="info-list" style={{ marginTop: '18px' }}>
-                  <div className="info-item"><div><strong>Full Name</strong><small>{user?.kyc?.fullName}</small></div><div className="status-pill pending">Pending</div></div>
-                  <div className="info-item"><div><strong>Phone</strong><small>{user?.kyc?.phone}</small></div><div>{(user?.kyc?.documentType || 'passport').replace('_', ' ')}</div></div>
-                  <div className="info-item"><div><strong>Country</strong><small>{user?.kyc?.country}</small></div><div>{(user?.kyc?.documentType || 'passport').replace('_', ' ')}</div></div>
+                  <div className="info-item"><div><strong>Full Name</strong><small>{currentKyc?.fullName || displayName}</small></div><div className="status-pill pending">Pending</div></div>
+                  <div className="info-item"><div><strong>Phone</strong><small>{currentKyc?.phone || 'Not set'}</small></div><div>{currentDocumentType}</div></div>
+                  <div className="info-item"><div><strong>Country</strong><small>{currentKyc?.country || 'Not set'}</small></div><div>{currentDocumentType}</div></div>
                 </div>
                 <div className="doc-grid" style={{ marginTop: '18px' }}>
                   <div className="doc-card">
                     <strong>Front Document</strong>
                     <div className="doc-preview">
-                      {user?.kyc?.frontImage ? <img src={user.kyc.frontImage} alt="pending front document" /> : 'No image'}
+                      {currentKyc?.frontImage ? <img src={currentKyc.frontImage} alt="pending front document" /> : 'No image'}
                     </div>
                   </div>
                   <div className="doc-card">
                     <strong>Back Document</strong>
                     <div className="doc-preview">
-                      {user?.kyc?.backImage ? <img src={user.kyc.backImage} alt="pending back document" /> : 'No image'}
+                      {currentKyc?.backImage ? <img src={currentKyc.backImage} alt="pending back document" /> : 'No image'}
                     </div>
                   </div>
                 </div>
