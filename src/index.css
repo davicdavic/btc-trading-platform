@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(247, 147, 26, 0.08), transparent 22%),
+    linear-gradient(180deg, #0f131c 0%, #0b0e11 100%);
+  color: #EAECEF;
+  overflow-x: hidden;
+  overscroll-behavior-y: auto;
+}
+
+.app-main-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .app-main-scroll {
+    overscroll-behavior-y: contain;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E2329;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2B3139;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3A3F4B;
+}
+
+.glass-card {
+  background: rgba(30, 35, 41, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #F0B90B, #0ECB81);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(240, 185, 11, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(240, 185, 11, 0.6); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.candle-up { background-color: #0ECB81; }
+.candle-down { background-color: #F6465D; }
+
+input:focus, button:focus {
+  outline: none;
+}
+
+.custom-input {
+  background: #0B0E11;
+  border: 1px solid #2B3139;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: #F0B90B;
+  box-shadow: 0 0 10px rgba(240, 185, 11, 0.2);
+}

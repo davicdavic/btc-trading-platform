@@ -1,0 +1,658 @@
+{
+  "settings": {
+    "walletAddress": "bc1qucksaf3gmjd658ljucux49092zh6xw4uqacn9a",
+    "stakingApr": 0.12,
+    "tradeOverride": {
+      "enabled": false,
+      "buyPrice": null,
+      "sellPrice": null
+    }
+  },
+  "users": [
+    {
+      "id": "2784b5d4-6fbf-4985-ac98-fe09305d39f1",
+      "fullName": "Platform Admin",
+      "email": "admin@btctradepro.demo",
+      "passwordHash": "$2b$10$e/iKFKQhZH2qZrnk1c4N5OhjK3u6DJ15qz.18rG92NRHWmJ3zl7Ea",
+      "role": "admin",
+      "balances": {
+        "usd": 0,
+        "btc": 0,
+        "usdt": 0
+      },
+      "profile": {
+        "name": "Platform Admin",
+        "city": "",
+        "job": "",
+        "postCode": "",
+        "country": "",
+        "avatarPath": ""
+      },
+      "kyc": {
+        "status": "verified",
+        "documentPath": "",
+        "idType": "",
+        "submittedAt": null,
+        "reviewedAt": null
+      },
+      "createdAt": "2026-04-29T05:12:01.053Z",
+      "updatedAt": "2026-04-29T05:12:01.053Z",
+      "userTag": "UID-3342555D",
+      "tradingBalances": {
+        "btc": 0,
+        "usd": 0
+      },
+      "tradingHistory": [],
+      "stakingHistory": []
+    },
+    {
+      "id": "328d74d6-204f-452b-8c31-1ba16d0a156e",
+      "fullName": "Demo Trader",
+      "email": "user1777439591944@demo.test",
+      "passwordHash": "$2b$10$vW0jKsUqLgz6jp8wvLQXfe4IQryZKKkD07L.2.pBXxCA7h1fFxe/K",
+      "role": "user",
+      "balances": {
+        "usd": 9500,
+        "btc": 0.2554715151085286,
+        "usdt": 0
+      },
+      "profile": {
+        "name": "Demo Trader",
+        "city": "Yangon",
+        "job": "Analyst",
+        "postCode": "",
+        "country": "",
+        "avatarPath": ""
+      },
+      "kyc": {
+        "status": "verified",
+        "documentPath": "/uploads/1777439592127-id-proof.txt",
+        "idType": "",
+        "submittedAt": "2026-04-29T05:13:12.128Z",
+        "reviewedAt": "2026-04-29T05:13:12.130Z"
+      },
+      "createdAt": "2026-04-29T05:13:12.035Z",
+      "updatedAt": "2026-04-29T05:31:29.004Z",
+      "userTag": "UID-B0AF0FF6",
+      "tradingBalances": {
+        "btc": 0,
+        "usd": 0
+      },
+      "tradingHistory": [],
+      "stakingHistory": []
+    },
+    {
+      "id": "ce001eeb-f3df-488f-a11e-e2e60f366b9b",
+      "fullName": "Dave",
+      "email": "ttorn753@gmail.com",
+      "passwordHash": "$2b$10$s0AFXeWUakHELU6CDOQwbeAPlFTAPdFC/aGmBrgKNwwnLPsAJ4BIe",
+      "role": "user",
+      "balances": {
+        "usd": 10000,
+        "btc": 0,
+        "usdt": 0
+      },
+      "profile": {
+        "name": "Dave",
+        "city": "",
+        "job": "",
+        "postCode": "",
+        "country": "",
+        "avatarPath": ""
+      },
+      "kyc": {
+        "status": "not_submitted",
+        "documentPath": "",
+        "idType": "",
+        "submittedAt": null,
+        "reviewedAt": null
+      },
+      "createdAt": "2026-04-29T05:17:00.737Z",
+      "updatedAt": "2026-04-29T05:31:27.214Z",
+      "userTag": "UID-6A717E7F",
+      "tradingBalances": {
+        "btc": 0,
+        "usd": 0
+      },
+      "tradingHistory": [],
+      "stakingHistory": []
+    },
+    {
+      "id": "1f21ca29-3c6c-44a2-8478-c6323613bd5b",
+      "fullName": "Pro Trader",
+      "email": "user1777441606351@demo.test",
+      "passwordHash": "$2b$10$mKUSCNzRsZ.t0Rp.WV.jb.HzOoGkegdEt9bgqYHEWph2kSiB8OemC",
+      "role": "user",
+      "balances": {
+        "usd": 10000,
+        "btc": 0.1,
+        "usdt": 0
+      },
+      "profile": {
+        "name": "Pro Trader",
+        "city": "Yangon",
+        "job": "Engineer",
+        "postCode": "",
+        "country": "",
+        "avatarPath": ""
+      },
+      "kyc": {
+        "status": "verified",
+        "documentPath": "/uploads/1777441606513-id-proof.txt",
+        "idType": "",
+        "submittedAt": "2026-04-29T05:46:46.514Z",
+        "reviewedAt": "2026-04-29T05:46:46.515Z"
+      },
+      "createdAt": "2026-04-29T05:46:46.438Z",
+      "updatedAt": "2026-04-29T05:46:46.515Z",
+      "userTag": "UID-8E6738C0",
+      "tradingBalances": {
+        "btc": 0,
+        "usd": 0
+      },
+      "tradingHistory": [],
+      "stakingHistory": []
+    },
+    {
+      "id": "93d63113-7d0f-452f-b104-a469bc3b068a",
+      "fullName": "A",
+      "email": "user1777441616286@demo.test",
+      "passwordHash": "$2b$10$XxYybef3Zmwa8IEX4a439ugyDl6IdQyniZUPoTr56Rw3ZrGT/6nOW",
+      "role": "user",
+      "balances": {
+        "usd": 10000,
+        "btc": 0,
+        "usdt": 0
+      },
+      "profile": {
+        "name": "A",
+        "city": "",
+        "job": "",
+        "postCode": "",
+        "country": "",
+        "avatarPath": ""
+      },
+      "kyc": {
+        "status": "not_submitted",
+        "documentPath": "",
+        "idType": "",
+        "submittedAt": null,
+        "reviewedAt": null
+      },
+      "createdAt": "2026-04-29T05:46:56.364Z",
+      "updatedAt": "2026-04-29T05:46:56.364Z",
+      "userTag": "UID-E4F373D6",
+      "tradingBalances": {
+        "btc": 0,
+        "usd": 0
+      },
+      "tradingHistory": [],
+      "stakingHistory": []
+    },
+    {
+      "id": "69bd178b-d444-434c-95c2-55df02d15a63",
+      "fullName": "Pro Trader",
+      "email": "user1777441630303@demo.test",
+      "passwordHash": "$2b$10$xJISG8q8A.FEJTNQmFD11OjTZBqmc6McFTYYPObEQNnnpdhtj9d0m",
+      "role": "user",
+      "balances": {
+        "usd": 10000,
+        "btc": 0.1,
+        "usdt": 0
+      },
+      "profile": {
+        "name": "Pro Trader",
+        "city": "Yangon",
+        "job": "Engineer",
+        "postCode": "",
+        "country": "",
+        "avatarPath": ""
+      },
+      "kyc": {
+        "status": "verified",
+        "documentPath": "/uploads/1777441630449-id-proof.txt",
+        "idType": "",
+        "submittedAt": "2026-04-29T05:47:10.449Z",
+        "reviewedAt": "2026-04-29T05:51:31.803Z"
+      },
+      "createdAt": "2026-04-29T05:47:10.382Z",
+      "updatedAt": "2026-04-29T05:51:31.803Z",
+      "userTag": "UID-A70C8898",
+      "tradingBalances": {
+        "btc": 0,
+        "usd": 0
+      },
+      "tradingHistory": [],
+      "stakingHistory": []
+    },
+    {
+      "id": "2f2fccdf-848b-4f87-a516-8c0c043bf134",
+      "fullName": "Pro Trader Updated",
+      "userTag": "UID-68037B30",
+      "email": "user1777441661104@demo.test",
+      "passwordHash": "$2b$10$4ygco5WyKaAkT5TnYwhb3Ohohp177SOHjDJ98kPdQvgOWJD0gOsRu",
+      "role": "user",
+      "balances": {
+        "usd": 17228.78,
+        "btc": 0.005469326336109968,
+        "usdt": 0
+      },
+      "profile": {
+        "name": "Pro Trader Updated",
+        "city": "Yangon",
+        "job": "Engineer",
+        "postCode": "11181",
+        "country": "Myanmar",
+        "avatarPath": ""
+      },
+      "kyc": {
+        "status": "verified",
+        "documentPath": "/uploads/1777441661402-id-proof.txt",
+        "idType": "Driver License",
+        "submittedAt": "2026-04-29T05:47:41.404Z",
+        "reviewedAt": "2026-04-29T05:47:41.406Z"
+      },
+      "createdAt": "2026-04-29T05:47:41.193Z",
+      "updatedAt": "2026-04-29T05:47:41.663Z",
+      "tradingBalances": {
+        "btc": 0,
+        "usd": 0
+      },
+      "tradingHistory": [],
+      "stakingHistory": []
+    }
+  ],
+  "trades": [
+    {
+      "id": "952aac66-80b4-4102-839d-2fec04352b72",
+      "userId": "2f2fccdf-848b-4f87-a516-8c0c043bf134",
+      "side": "buy",
+      "executionPrice": 77287.8,
+      "btcAmount": 0.006469326336109968,
+      "usdAmount": 500,
+      "priceSource": "binance",
+      "createdAt": "2026-04-29T05:47:41.656Z"
+    },
+    {
+      "id": "33279b3a-3d8c-447b-b158-c38377bd36a0",
+      "userId": "328d74d6-204f-452b-8c31-1ba16d0a156e",
+      "side": "buy",
+      "executionPrice": 77261.66,
+      "btcAmount": 0.0064715151085286025,
+      "usdAmount": 500,
+      "priceSource": "binance",
+      "createdAt": "2026-04-29T05:13:12.369Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "f0ec4784-dcee-4ab6-a494-5bcaea51e3ad",
+      "userId": "2f2fccdf-848b-4f87-a516-8c0c043bf134",
+      "type": "withdrawal",
+      "asset": "BTC",
+      "amount": 0.001,
+      "usdAmount": 0,
+      "status": "completed",
+      "meta": {
+        "requestId": "760cf117-abb5-49ec-aa8b-0f685faac5a0",
+        "walletAddress": "bc1qdestinationdemo"
+      },
+      "createdAt": "2026-04-29T05:47:41.659Z",
+      "updatedAt": "2026-04-29T05:47:41.663Z"
+    },
+    {
+      "id": "0248fcce-4cb6-481c-b392-fcd7a3fbfd67",
+      "userId": "2f2fccdf-848b-4f87-a516-8c0c043bf134",
+      "type": "trade_buy",
+      "asset": "BTC",
+      "amount": 0.006469326336109968,
+      "usdAmount": 500,
+      "status": "completed",
+      "meta": {
+        "tradeId": "952aac66-80b4-4102-839d-2fec04352b72",
+        "executionPrice": 77287.8,
+        "side": "buy"
+      },
+      "createdAt": "2026-04-29T05:47:41.656Z",
+      "updatedAt": "2026-04-29T05:47:41.656Z"
+    },
+    {
+      "id": "df08655a-cd43-48e5-bfa9-622d6eb69d67",
+      "userId": "2f2fccdf-848b-4f87-a516-8c0c043bf134",
+      "type": "deposit",
+      "asset": "USDT",
+      "amount": 0.1,
+      "usdAmount": 7728.780000000001,
+      "status": "completed",
+      "meta": {
+        "requestId": "f59f6011-a33f-4935-bf3f-a13594272d49",
+        "txHash": "tx-demo",
+        "fromWallet": "wallet-source",
+        "creditedPrice": 77287.8,
+        "creditedUsdAmount": 7728.780000000001,
+        "network": "BTC"
+      },
+      "createdAt": "2026-04-29T05:47:41.262Z",
+      "updatedAt": "2026-04-29T05:47:41.395Z"
+    },
+    {
+      "id": "177b1d4b-8d5b-4caa-8662-b4a7ef3b9e8d",
+      "userId": "69bd178b-d444-434c-95c2-55df02d15a63",
+      "type": "deposit",
+      "asset": "BTC",
+      "amount": 0.1,
+      "usdAmount": 0,
+      "status": "completed",
+      "meta": {
+        "requestId": "f49d1f98-d924-4088-8159-28a5e0587eb9",
+        "txHash": "tx-demo",
+        "fromWallet": "wallet-source"
+      },
+      "createdAt": "2026-04-29T05:47:10.444Z",
+      "updatedAt": "2026-04-29T05:47:10.446Z"
+    },
+    {
+      "id": "6edc7119-7278-47b6-a0c3-cab11d27d4e8",
+      "userId": "1f21ca29-3c6c-44a2-8478-c6323613bd5b",
+      "type": "deposit",
+      "asset": "BTC",
+      "amount": 0.1,
+      "usdAmount": 0,
+      "status": "completed",
+      "meta": {
+        "requestId": "23dd987f-2416-419c-b692-d5ce5bf14b8a",
+        "txHash": "tx-demo",
+        "fromWallet": "wallet-source"
+      },
+      "createdAt": "2026-04-29T05:46:46.508Z",
+      "updatedAt": "2026-04-29T05:46:46.509Z"
+    },
+    {
+      "id": "bea64690-06b9-463f-a10f-4cad3c8ef258",
+      "userId": "328d74d6-204f-452b-8c31-1ba16d0a156e",
+      "type": "stake",
+      "asset": "BTC",
+      "amount": 0.001,
+      "usdAmount": 0,
+      "status": "completed",
+      "meta": {
+        "stakeId": "346f3cb9-670a-4869-9339-c8b437ad3498",
+        "apr": 0.12
+      },
+      "createdAt": "2026-04-29T05:13:12.373Z",
+      "updatedAt": "2026-04-29T05:13:12.373Z"
+    },
+    {
+      "id": "9b75f14b-adc5-4d8d-b3b7-0b8d0a7fb65f",
+      "userId": "328d74d6-204f-452b-8c31-1ba16d0a156e",
+      "type": "trade_buy",
+      "asset": "BTC",
+      "amount": 0.0064715151085286025,
+      "usdAmount": 500,
+      "status": "completed",
+      "meta": {
+        "tradeId": "33279b3a-3d8c-447b-b158-c38377bd36a0",
+        "executionPrice": 77261.66,
+        "side": "buy"
+      },
+      "createdAt": "2026-04-29T05:13:12.369Z",
+      "updatedAt": "2026-04-29T05:13:12.369Z"
+    },
+    {
+      "id": "754c45ef-84f9-4cc4-ba1a-3b4d8854699a",
+      "userId": "328d74d6-204f-452b-8c31-1ba16d0a156e",
+      "type": "deposit",
+      "asset": "BTC",
+      "amount": 0.25,
+      "usdAmount": 0,
+      "status": "completed",
+      "meta": {
+        "requestId": "4f77b1d0-5163-4a21-8a60-56685f092cec",
+        "txHash": "demo-hash",
+        "fromWallet": "sender-wallet-demo"
+      },
+      "createdAt": "2026-04-29T05:13:12.121Z",
+      "updatedAt": "2026-04-29T05:13:12.123Z"
+    }
+  ],
+  "depositRequests": [
+    {
+      "id": "f59f6011-a33f-4935-bf3f-a13594272d49",
+      "userId": "2f2fccdf-848b-4f87-a516-8c0c043bf134",
+      "amount": 0.1,
+      "txHash": "tx-demo",
+      "fromWallet": "wallet-source",
+      "walletAddress": "bc1qucksaf3gmjd658ljucux49092zh6xw4uqacn9a",
+      "status": "approved",
+      "network": "BTC",
+      "creditedUsdAmount": 7728.780000000001,
+      "creditedPrice": 77287.8,
+      "createdAt": "2026-04-29T05:47:41.262Z",
+      "updatedAt": "2026-04-29T05:47:41.395Z",
+      "reviewedBy": "2784b5d4-6fbf-4985-ac98-fe09305d39f1",
+      "reviewedAt": "2026-04-29T05:47:41.395Z"
+    },
+    {
+      "id": "f49d1f98-d924-4088-8159-28a5e0587eb9",
+      "userId": "69bd178b-d444-434c-95c2-55df02d15a63",
+      "amount": 0.1,
+      "txHash": "tx-demo",
+      "fromWallet": "wallet-source",
+      "walletAddress": "bc1qucksaf3gmjd658ljucux49092zh6xw4uqacn9a",
+      "status": "approved",
+      "createdAt": "2026-04-29T05:47:10.444Z",
+      "updatedAt": "2026-04-29T05:47:10.446Z",
+      "reviewedBy": "2784b5d4-6fbf-4985-ac98-fe09305d39f1",
+      "reviewedAt": "2026-04-29T05:47:10.446Z"
+    },
+    {
+      "id": "23dd987f-2416-419c-b692-d5ce5bf14b8a",
+      "userId": "1f21ca29-3c6c-44a2-8478-c6323613bd5b",
+      "amount": 0.1,
+      "txHash": "tx-demo",
+      "fromWallet": "wallet-source",
+      "walletAddress": "bc1qucksaf3gmjd658ljucux49092zh6xw4uqacn9a",
+      "status": "approved",
+      "createdAt": "2026-04-29T05:46:46.508Z",
+      "updatedAt": "2026-04-29T05:46:46.509Z",
+      "reviewedBy": "2784b5d4-6fbf-4985-ac98-fe09305d39f1",
+      "reviewedAt": "2026-04-29T05:46:46.509Z"
+    },
+    {
+      "id": "4f77b1d0-5163-4a21-8a60-56685f092cec",
+      "userId": "328d74d6-204f-452b-8c31-1ba16d0a156e",
+      "amount": 0.25,
+      "txHash": "demo-hash",
+      "fromWallet": "sender-wallet-demo",
+      "walletAddress": "bc1qucksaf3gmjd658ljucux49092zh6xw4uqacn9a",
+      "status": "approved",
+      "createdAt": "2026-04-29T05:13:12.121Z",
+      "updatedAt": "2026-04-29T05:13:12.123Z",
+      "reviewedBy": "2784b5d4-6fbf-4985-ac98-fe09305d39f1",
+      "reviewedAt": "2026-04-29T05:13:12.123Z"
+    }
+  ],
+  "withdrawalRequests": [
+    {
+      "id": "760cf117-abb5-49ec-aa8b-0f685faac5a0",
+      "userId": "2f2fccdf-848b-4f87-a516-8c0c043bf134",
+      "amount": 0.001,
+      "walletAddress": "bc1qdestinationdemo",
+      "status": "approved",
+      "network": "BTC",
+      "createdAt": "2026-04-29T05:47:41.659Z",
+      "updatedAt": "2026-04-29T05:47:41.663Z",
+      "reviewedBy": "2784b5d4-6fbf-4985-ac98-fe09305d39f1",
+      "reviewedAt": "2026-04-29T05:47:41.663Z"
+    }
+  ],
+  "stakes": [
+    {
+      "id": "346f3cb9-670a-4869-9339-c8b437ad3498",
+      "userId": "328d74d6-204f-452b-8c31-1ba16d0a156e",
+      "amount": 0.001,
+      "apr": 0.12,
+      "status": "active",
+      "createdAt": "2026-04-29T05:13:12.373Z",
+      "updatedAt": "2026-04-29T05:13:12.373Z",
+      "lastClaimAt": "2026-04-29T05:13:12.373Z",
+      "totalClaimed": 0
+    }
+  ],
+  "newsReactions": [
+    {
+      "articleId": "fallback-1",
+      "likes": [
+        "328d74d6-204f-452b-8c31-1ba16d0a156e"
+      ],
+      "comments": []
+    }
+  ],
+  "adminActivity": [
+    {
+      "id": "kyc-review-69bd178b-d444-434c-95c2-55df02d15a63",
+      "message": "KYC for user1777441630303@demo.test marked verified",
+      "createdAt": "2026-04-29T05:51:31.803Z"
+    },
+    {
+      "id": "withdraw-review-760cf117-abb5-49ec-aa8b-0f685faac5a0",
+      "message": "Withdrawal 760cf117-abb5-49ec-aa8b-0f685faac5a0 approved",
+      "createdAt": "2026-04-29T05:47:41.663Z"
+    },
+    {
+      "id": "withdraw-760cf117-abb5-49ec-aa8b-0f685faac5a0",
+      "message": "Withdrawal request received for 0.001 BTC",
+      "createdAt": "2026-04-29T05:47:41.659Z"
+    },
+    {
+      "id": "trade-952aac66-80b4-4102-839d-2fec04352b72",
+      "message": "user1777441661104@demo.test executed BUY 0.006469 BTC",
+      "createdAt": "2026-04-29T05:47:41.656Z"
+    },
+    {
+      "id": "kyc-review-2f2fccdf-848b-4f87-a516-8c0c043bf134",
+      "message": "KYC for user1777441661104@demo.test marked verified",
+      "createdAt": "2026-04-29T05:47:41.406Z"
+    },
+    {
+      "id": "kyc-2f2fccdf-848b-4f87-a516-8c0c043bf134-1777441661404",
+      "message": "user1777441661104@demo.test submitted KYC",
+      "createdAt": "2026-04-29T05:47:41.404Z"
+    },
+    {
+      "id": "deposit-review-f59f6011-a33f-4935-bf3f-a13594272d49",
+      "message": "Deposit f59f6011-a33f-4935-bf3f-a13594272d49 approved",
+      "createdAt": "2026-04-29T05:47:41.395Z"
+    },
+    {
+      "id": "deposit-f59f6011-a33f-4935-bf3f-a13594272d49",
+      "message": "Deposit request received for 0.1 BTC",
+      "createdAt": "2026-04-29T05:47:41.262Z"
+    },
+    {
+      "id": "user-2f2fccdf-848b-4f87-a516-8c0c043bf134",
+      "message": "user1777441661104@demo.test registered",
+      "createdAt": "2026-04-29T05:47:41.193Z"
+    },
+    {
+      "id": "kyc-69bd178b-d444-434c-95c2-55df02d15a63-1777441630449",
+      "message": "user1777441630303@demo.test submitted KYC",
+      "createdAt": "2026-04-29T05:47:10.449Z"
+    },
+    {
+      "id": "deposit-review-f49d1f98-d924-4088-8159-28a5e0587eb9",
+      "message": "Deposit f49d1f98-d924-4088-8159-28a5e0587eb9 approved",
+      "createdAt": "2026-04-29T05:47:10.446Z"
+    },
+    {
+      "id": "deposit-f49d1f98-d924-4088-8159-28a5e0587eb9",
+      "message": "Deposit request received for 0.1 BTC",
+      "createdAt": "2026-04-29T05:47:10.444Z"
+    },
+    {
+      "id": "user-69bd178b-d444-434c-95c2-55df02d15a63",
+      "message": "user1777441630303@demo.test registered",
+      "createdAt": "2026-04-29T05:47:10.382Z"
+    },
+    {
+      "id": "user-93d63113-7d0f-452f-b104-a469bc3b068a",
+      "message": "user1777441616286@demo.test registered",
+      "createdAt": "2026-04-29T05:46:56.364Z"
+    },
+    {
+      "id": "kyc-review-1f21ca29-3c6c-44a2-8478-c6323613bd5b",
+      "message": "KYC for user1777441606351@demo.test marked verified",
+      "createdAt": "2026-04-29T05:46:46.515Z"
+    },
+    {
+      "id": "kyc-1f21ca29-3c6c-44a2-8478-c6323613bd5b-1777441606514",
+      "message": "user1777441606351@demo.test submitted KYC",
+      "createdAt": "2026-04-29T05:46:46.514Z"
+    },
+    {
+      "id": "deposit-review-23dd987f-2416-419c-b692-d5ce5bf14b8a",
+      "message": "Deposit 23dd987f-2416-419c-b692-d5ce5bf14b8a approved",
+      "createdAt": "2026-04-29T05:46:46.509Z"
+    },
+    {
+      "id": "deposit-23dd987f-2416-419c-b692-d5ce5bf14b8a",
+      "message": "Deposit request received for 0.1 BTC",
+      "createdAt": "2026-04-29T05:46:46.508Z"
+    },
+    {
+      "id": "user-1f21ca29-3c6c-44a2-8478-c6323613bd5b",
+      "message": "user1777441606351@demo.test registered",
+      "createdAt": "2026-04-29T05:46:46.439Z"
+    },
+    {
+      "id": "adjust-328d74d6-204f-452b-8c31-1ba16d0a156e-1777440689004",
+      "message": "Adjusted balances for user1777439591944@demo.test",
+      "createdAt": "2026-04-29T05:31:29.004Z"
+    },
+    {
+      "id": "adjust-ce001eeb-f3df-488f-a11e-e2e60f366b9b-1777440687214",
+      "message": "Adjusted balances for ttorn753@gmail.com",
+      "createdAt": "2026-04-29T05:31:27.214Z"
+    },
+    {
+      "id": "user-ce001eeb-f3df-488f-a11e-e2e60f366b9b",
+      "message": "ttorn753@gmail.com registered",
+      "createdAt": "2026-04-29T05:17:00.737Z"
+    },
+    {
+      "id": "trade-33279b3a-3d8c-447b-b158-c38377bd36a0",
+      "message": "user1777439591944@demo.test executed BUY 0.006472 BTC",
+      "createdAt": "2026-04-29T05:13:12.369Z"
+    },
+    {
+      "id": "kyc-review-328d74d6-204f-452b-8c31-1ba16d0a156e",
+      "message": "KYC for user1777439591944@demo.test marked verified",
+      "createdAt": "2026-04-29T05:13:12.130Z"
+    },
+    {
+      "id": "kyc-328d74d6-204f-452b-8c31-1ba16d0a156e-1777439592128",
+      "message": "user1777439591944@demo.test submitted KYC",
+      "createdAt": "2026-04-29T05:13:12.128Z"
+    },
+    {
+      "id": "deposit-review-4f77b1d0-5163-4a21-8a60-56685f092cec",
+      "message": "Deposit 4f77b1d0-5163-4a21-8a60-56685f092cec approved",
+      "createdAt": "2026-04-29T05:13:12.123Z"
+    },
+    {
+      "id": "deposit-4f77b1d0-5163-4a21-8a60-56685f092cec",
+      "message": "Deposit request received for 0.25 BTC",
+      "createdAt": "2026-04-29T05:13:12.121Z"
+    },
+    {
+      "id": "user-328d74d6-204f-452b-8c31-1ba16d0a156e",
+      "message": "user1777439591944@demo.test registered",
+      "createdAt": "2026-04-29T05:13:12.037Z"
+    },
+    {
+      "id": "seed-1777439521054",
+      "message": "Default admin account created",
+      "createdAt": "2026-04-29T05:12:01.054Z"
+    }
+  ]
+}
