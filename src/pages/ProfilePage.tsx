@@ -131,15 +131,7 @@ export default function ProfilePage() {
   const handleKycImageUpload = (field: 'frontImage' | 'backImage') => (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      const result = typeof reader.result === 'string' ? reader.result : '';
-      if (result) {
-        setKycForm((current) => ({ ...current, [field]: result }));
-      }
-    };
-    reader.readAsDataURL(file);
+    setKycForm((current) => ({ ...current, [field]: file.name || 'Document uploaded' }));
   };
 
   const savePassword = () => {
@@ -819,7 +811,9 @@ export default function ProfilePage() {
                   </div>
                   <div className="avatar-section full">
                     <strong>Document Front</strong>
-                    <div className="avatar-help" style={{ marginBottom: '12px' }}>Upload the front side image. After you submit, the file goes to admin review and will not stay visible on your profile page.</div>
+                    <div className="avatar-help" style={{ marginBottom: '12px' }}>
+                      {kycForm.frontImage ? `Selected file: ${kycForm.frontImage}` : 'Upload the front side image. After you submit, the file goes to admin review and will not stay visible on your profile page.'}
+                    </div>
                     <label className="upload-btn">
                       <Camera size={16} />
                       Upload Front Image
@@ -828,7 +822,9 @@ export default function ProfilePage() {
                   </div>
                   <div className="avatar-section full">
                     <strong>Document Back</strong>
-                    <div className="avatar-help" style={{ marginBottom: '12px' }}>Upload the back side image. The profile will only show your verification status after submission.</div>
+                    <div className="avatar-help" style={{ marginBottom: '12px' }}>
+                      {kycForm.backImage ? `Selected file: ${kycForm.backImage}` : 'Upload the back side image. The profile will only show your verification status after submission.'}
+                    </div>
                     <label className="upload-btn">
                       <Camera size={16} />
                       Upload Back Image

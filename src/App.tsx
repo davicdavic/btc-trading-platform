@@ -102,6 +102,22 @@ function readStorageJson<T>(key: string, fallback: T): T {
   }
 }
 
+function writeStorageJson(key: string, value: unknown) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    console.error(`Failed to persist ${key}:`, error);
+  }
+}
+
+function removeStorageKey(key: string) {
+  try {
+    localStorage.removeItem(key);
+  } catch (error) {
+    console.error(`Failed to remove ${key}:`, error);
+  }
+}
+
 function asNumber(value: unknown, fallback = 0) {
   const parsed = typeof value === 'number' ? value : Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
@@ -109,6 +125,12 @@ function asNumber(value: unknown, fallback = 0) {
 
 function asString(value: unknown, fallback = '') {
   return typeof value === 'string' ? value : fallback;
+}
+
+function sanitizeDocumentValue(value: unknown) {
+  const text = asString(value);
+  if (!text) return '';
+  return text.startsWith('data:') ? 'Document uploaded' : text;
 }
 
 function getDefaultTimezone() {
@@ -131,6 +153,19 @@ function normalizeUser(input: User): User {
     stakeAmount: asNumber(input.stakeAmount),
     vipLevel: asNumber(input.vipLevel),
     joinedDate: asString(input.joinedDate, new Date().toISOString().slice(0, 10)),
+    kyc: input.kyc
+      ? {
+          ...input.kyc,
+          fullName: asString(input.kyc.fullName, asString(input.name, 'Trader')),
+          phone: asString(input.kyc.phone),
+          country: asString(input.kyc.country),
+          city: asString(input.kyc.city),
+          postCode: asString(input.kyc.postCode),
+          job: asString(input.kyc.job),
+          frontImage: sanitizeDocumentValue(input.kyc.frontImage),
+          backImage: sanitizeDocumentValue(input.kyc.backImage),
+        }
+      : input.kyc,
   };
 }
 
@@ -198,8 +233,8 @@ function buildKycRequestFromUser(input: User): KycRequest | null {
     postCode: asString(input.kyc.postCode),
     job: asString(input.kyc.job),
     documentType: input.kyc.documentType,
-    frontImage: asString(input.kyc.frontImage),
-    backImage: asString(input.kyc.backImage),
+    frontImage: sanitizeDocumentValue(input.kyc.frontImage),
+    backImage: sanitizeDocumentValue(input.kyc.backImage),
     status: 'pending',
     submittedAt: asString(input.kyc.submittedAt, new Date().toISOString()),
     reviewedAt: input.kyc.reviewedAt ? asString(input.kyc.reviewedAt) : undefined,
@@ -246,6 +281,8 @@ function mergeKycRequests(storedRequests: KycRequest[], sourceUsers: User[]) {
     merged.set(key, {
       ...(existing || {}),
       ...entry,
+      frontImage: sanitizeDocumentValue(entry.frontImage || existing?.frontImage),
+      backImage: sanitizeDocumentValue(entry.backImage || existing?.backImage),
       reviewedAt: entry.reviewedAt || existing?.reviewedAt,
       reviewedBy: entry.reviewedBy || existing?.reviewedBy,
     });
@@ -452,11 +489,11 @@ function App() {
   });
 
   useEffect(() => {
-    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    writeStorageJson(USERS_KEY, users);
   }, [users]);
 
   useEffect(() => {
-    localStorage.setItem(TX_KEY, JSON.stringify(transactions));
+    writeStorageJson(TX_KEY, transactions);
   }, [transactions]);
 
   useEffect(() => {
@@ -468,7 +505,7 @@ function App() {
   }, [transactions]);
 
   useEffect(() => {
-    localStorage.setItem(WALLET_REQUESTS_KEY, JSON.stringify(walletRequests));
+    writeStorageJson(WALLET_REQUESTS_KEY, walletRequests);
   }, [walletRequests]);
 
   useEffect(() => {
@@ -480,35 +517,35 @@ function App() {
   }, [users]);
 
   useEffect(() => {
-    localStorage.setItem(KYC_REQUESTS_KEY, JSON.stringify(kycRequests));
+    writeStorageJson(KYC_REQUESTS_KEY, kycRequests);
   }, [kycRequests]);
 
   useEffect(() => {
-    localStorage.setItem(TRADES_KEY, JSON.stringify(trades));
+    writeStorageJson(TRADES_KEY, trades);
   }, [trades]);
 
   useEffect(() => {
     if (activeTrade) {
-      localStorage.setItem(ACTIVE_TRADE_KEY, JSON.stringify(activeTrade));
+      writeStorageJson(ACTIVE_TRADE_KEY, activeTrade);
     } else {
-      localStorage.removeItem(ACTIVE_TRADE_KEY);
+      removeStorageKey(ACTIVE_TRADE_KEY);
     }
   }, [activeTrade]);
 
   useEffect(() => {
     if (lastTradeResult) {
-      localStorage.setItem(TRADE_RESULT_KEY, JSON.stringify(lastTradeResult));
+      writeStorageJson(TRADE_RESULT_KEY, lastTradeResult);
     } else {
-      localStorage.removeItem(TRADE_RESULT_KEY);
+      removeStorageKey(TRADE_RESULT_KEY);
     }
   }, [lastTradeResult]);
 
   useEffect(() => {
-    localStorage.removeItem('btcCurrentUserEmail');
+    removeStorageKey('btcCurrentUserEmail');
     if (user) {
-      localStorage.setItem(AUTH_SESSION_KEY, JSON.stringify({ email: user.email, role: user.role || 'user' }));
+      writeStorageJson(AUTH_SESSION_KEY, { email: user.email, role: user.role || 'user' });
     } else {
-      localStorage.removeItem(AUTH_SESSION_KEY);
+      removeStorageKey(AUTH_SESSION_KEY);
     }
   }, [user]);
 

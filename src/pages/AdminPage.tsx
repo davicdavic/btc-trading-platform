@@ -287,23 +287,14 @@ export default function AdminPage() {
           color: #f6465d;
         }
         .docs {
-          display: flex;
-          gap: 10px;
+          display: grid;
+          gap: 8px;
           margin-top: 10px;
-          flex-wrap: wrap;
         }
-        .doc-thumb {
-          width: 86px;
-          height: 64px;
-          border-radius: 12px;
-          overflow: hidden;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-        }
-        .doc-thumb img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        .doc-line {
+          color: #8fa2ba;
+          font-size: 12px;
+          line-height: 1.6;
         }
         .history-grid {
           display: grid;
@@ -450,8 +441,8 @@ export default function AdminPage() {
                   <small>{entry.phone} • {entry.country}, {entry.city} {entry.postCode}</small>
                   <small>{entry.job} • {entry.documentType.replace('_', ' ')}</small>
                   <div className="docs">
-                    <div className="doc-thumb">{entry.frontImage ? <img src={entry.frontImage} alt="front document" /> : null}</div>
-                    <div className="doc-thumb">{entry.backImage ? <img src={entry.backImage} alt="back document" /> : null}</div>
+                    <div className="doc-line">Front document: {entry.frontImage || 'Not uploaded'}</div>
+                    <div className="doc-line">Back document: {entry.backImage || 'Not uploaded'}</div>
                   </div>
                 </div>
                 <div className="queue-side">
