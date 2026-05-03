@@ -29,20 +29,20 @@ app.use('/api/news', newsRoutes);
 app.use(express.static(publicDir));
 
 app.get('/health', (_req, res) => {
-    res.json({ ok: true, timestamp: new Date().toISOString() });
+  res.json({ ok: true, timestamp: new Date().toISOString() });
 });
 
 app.use((_req, res) => {
-    res.sendFile(path.join(publicDir, 'index.html'));
+  res.sendFile(path.join(publicDir, 'index.html'));
 });
 
 initializeStore()
-    .then(() => {
-        app.listen(PORT, () => {
-            console.log(`BTCTrade Pro demo server running on http://127.0.0.1:${PORT}`);
-        });
-    })
-    .catch((error) => {
-        console.error('Failed to initialize store:', error);
-        process.exit(1);
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`BTCTrade Pro demo server running on http://127.0.0.1:${PORT}`);
     });
+  })
+  .catch((error) => {
+    console.error('Failed to initialize store:', error);
+    process.exit(1);
+  });

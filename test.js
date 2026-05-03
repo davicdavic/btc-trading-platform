@@ -21,7 +21,7 @@ async function waitForServer(url, retries = 30) {
 }
 
 async function run() {
-    const server = spawn('node', ['server.js'], {
+    const server = spawn('node', ['server.cjs'], {
         stdio: ['ignore', 'pipe', 'pipe']
     });
 
